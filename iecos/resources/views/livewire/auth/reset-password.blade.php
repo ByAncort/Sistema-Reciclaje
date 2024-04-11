@@ -1,5 +1,5 @@
 <div>
-    @include('layouts.navbars.guest.login')
+  
     <div class="page-header section-height-75">
         <div class="container">
             <div class="row">
