@@ -40,7 +40,11 @@
     @guest
         {{-- If the user is on the login page --}}
         @if (!auth()->check() && in_array(request()->route()->getName(),['login'],))
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> e0665425ffdbc5780a4db65e966e4ed79010ea6b
             {{ $slot }}
             <div class="mt-5">
                 @include('layouts.footers.guest.with-socials')
