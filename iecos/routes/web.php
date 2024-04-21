@@ -13,9 +13,11 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-
+use App\Http\Controllers;
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+
+use App\Http\Controllers\WelcomeController;
 
 use Illuminate\Http\Request;
 
@@ -31,8 +33,9 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function() {
-    return redirect('/login');
+    return redirect('/welcome');
 });
+Route::get('/', [WelcomeController::class, 'render']);
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
