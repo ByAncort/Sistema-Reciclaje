@@ -66,7 +66,7 @@ html{
 body.dark-theme{
   --title-color: #F1F3F2;
   --text-color: #C7D1CC;
-  --body-color: #1D2521;
+  --body-color: #0e0e11;
   --container-color: #27302C;
 }
 
@@ -153,7 +153,7 @@ img{
 
 /*========== NAV ==========*/
 .nav{
-  max-width: 1024px;
+  max-width: none;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
