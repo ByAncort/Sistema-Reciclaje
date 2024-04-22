@@ -38,6 +38,7 @@ class AddUserController extends Component
             'user.name' => 'required',
             'user.email' => 'required|email',
             'user.role_id' => 'required',
+            'user.rut' => 'required', // Cambiado a 'user.rut' en lugar de solo 'rut'
             'password' => 'required|min:6',
         ], [
             'user.name.required' => 'El campo de nombre es obligatorio.',
@@ -46,22 +47,17 @@ class AddUserController extends Component
             'password.required' => 'El campo de password es obligatorio.',
             // Agrega mensajes personalizados para otras reglas de validación si es necesario
         ]);
-         
-// El método save() no se puede llamar directamente en un array. En su lugar, deberías guardar los datos en un modelo Eloquent. 
-    $user = new User();
-    $user->name = $data['user']['name'];
-    $user->email = $data['user']['email'];
-    $user->role_id = $data['user']['role_id'];
-    $user->password = bcrypt($data['password']); 
-    $user->save();
- 
-   // Redirige a la vista de usuarios
-   return Redirect::route('user');
-
-
-
-
-
+    
+        $user = new User();
+        $user->name = $data['user']['name'];
+        $user->email = $data['user']['email'];
+        $user->role_id = $data['user']['role_id'];
+        $user->rut = $data['user']['rut']; // Cambiado a 'rut' en lugar de 'user->rut'
+        $user->password = bcrypt($data['password']); 
+        $user->save();
+    
+        // Redirige a la vista de usuarios
+        return Redirect::route('user');
     }
 
 
