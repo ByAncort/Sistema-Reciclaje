@@ -36,7 +36,7 @@
                 </div>
             </a>
             <!-- Sidenav Type -->
-            <div class="mt-3">
+            <!-- <div class="mt-3">
                 <h6 class="mb-0">Sidenav Type</h6>
                 <p class="text-sm">Choose between 2 different sidenav types.</p>
             </div>
@@ -46,7 +46,7 @@
                 <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white"
                     onclick="sidebarType(this)">White</button>
             </div>
-            <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+            <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p> -->
             <!-- Navbar Fixed -->
             <div class="mt-3">
                 <h6 class="mb-0">Navbar Fixed</h6>
@@ -55,7 +55,7 @@
                 <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
                     onclick="navbarFixed(this)">
             </div>
-            <hr class="horizontal dark my-sm-4">
+            <!-- <hr class="horizontal dark my-sm-4">
             <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire"
                 target="_blank">Free download</a>
             <a class="btn btn-outline-dark w-100"
@@ -74,7 +74,7 @@
                     class="btn btn-dark mb-0 me-2" target="_blank">
                     <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

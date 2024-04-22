@@ -1,9 +1,5 @@
 <div>
-<<<<<<< HEAD
-    
-=======
    
->>>>>>> e0665425ffdbc5780a4db65e966e4ed79010ea6b
     <div class="page-header section-height-75">
         <div class="container">
             <div class="row">

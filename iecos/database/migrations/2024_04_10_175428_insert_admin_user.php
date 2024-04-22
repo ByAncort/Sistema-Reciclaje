@@ -9,6 +9,7 @@ class InsertAdminUser extends Migration
     public function up()
     {
         DB::table('users')->insert([
+            'role_id'=> '1',
             'name' => 'Admin',
             'email' => 'admin@softui.com',
             'password' => bcrypt('secret'),

@@ -13,13 +13,14 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-use App\Http\Controllers;
+use App\Http\Livewire\AdministratorController;
+use App\Http\Livewire\addUserController;
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
 
-use App\Http\Controllers\WelcomeController;
-
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,9 @@ use Illuminate\Http\Request;
 Route::get('/', function() {
     return redirect('/welcome');
 });
-Route::get('/', [WelcomeController::class, 'render']);
 
+
+Route::get('/', [WelcomeController::class, 'render']);
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
 
@@ -49,10 +51,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/billing', Billing::class)->name('billing');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
-    Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
+    
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
+    Route::middleware('role:1')->group(function () {
+        Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
+        Route::get('/users', AdministratorController::class)->name('user');
+        Route::get('/add-user', addUserController::class)->name('add-user');
+      
+        Route::post('/add', 'AddUserController@save')->name('add'); // Define la ruta utilizando el controlador
+
+    });
 });
 
