@@ -13,10 +13,13 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
+
 use App\Http\Livewire\AdministratorController;
 use App\Http\Livewire\addUserController;
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+
+use App\Http\Livewire\StoreController;
 
 use Illuminate\Http\Request;
 
@@ -56,13 +59,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
-    Route::middleware('role:1')->group(function () {
+
+    //Owner
+    Route::middleware('role:2')->group(function () {
         Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
         Route::get('/users', AdministratorController::class)->name('user');
         Route::get('/add-user', addUserController::class)->name('add-user');
-      
-        Route::post('/add', 'AddUserController@save')->name('add'); // Define la ruta utilizando el controlador
-
+        Route::post('/add', 'AddUserController@save')->name('add'); 
     });
+    
+    Route::get('/store', StoreController::class)->name('store');
+
+    
 });
 

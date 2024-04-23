@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -25,9 +26,13 @@ class SignUp extends Component
     }
 
     public function register() {
+        $role_id= DB::table('roles')->where('name', 'Usuario')->value('id');
+
+
         $this->validate();
         $user = User::create([
             'name' => $this->name,
+            'role_id' => $role_id,
             'email' => $this->email,
             'password' => Hash::make($this->password)
         ]);

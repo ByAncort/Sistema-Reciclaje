@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->nullable()->after('id');
+            $table->unsignedBigInteger('role_id')->default(4); // Puedes establecer el valor predeterminado según tu lógica
             $table->foreign('role_id')->references('id')->on('roles');
         });
     }
@@ -22,6 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        //
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['role_id']);
             $table->dropColumn('role_id');

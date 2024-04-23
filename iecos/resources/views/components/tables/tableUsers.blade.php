@@ -51,11 +51,7 @@
     </td>
     <td class="text-center">
         <p class="text-xs font-weight-bold mb-0">
-            @if($user->role_id == 1)
-                Admin
-            @else
-                User
-            @endif
+        {{ $user->name }}
         </p>
     </td>
     <td class="text-center">
@@ -63,11 +59,7 @@
     </td>
     <td class="text-center">
         <p class="text-xs font-weight-bold mb-0">
-            @if($user->role_id == 1)
-                Admin
-            @else
-                User
-            @endif
+        {{ $user->name }}
         </p>
     </td>
     <td class="text-center">

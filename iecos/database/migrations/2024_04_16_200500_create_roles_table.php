@@ -16,8 +16,11 @@ class CreateRolesTable extends Migration
         });
         // Insertar datos de roles
         DB::table('roles')->insert([
-            ['name' => 'Administrador', 'description' => 'Rol de administrador del sistema'],
-            ['name' => 'Usuario', 'description' => 'Rol de usuario estándar'],
+            ['name' => 'owner', 'description' => 'Dueño'],
+            ['name' => 'admin', 'description' => 'Administrador'],
+            ['name' => 'jobs', 'description' => 'Trabajos'],
+            ['name' => 'guest', 'description' => 'Invitado'],
+            ['name' => 'users', 'description' => 'Usuarios'],
         ]);
     }
 
