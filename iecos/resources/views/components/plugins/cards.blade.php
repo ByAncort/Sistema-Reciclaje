@@ -1,5 +1,5 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  @foreach($rewards as $reward)
+  @foreach($reward as $reward)
     <div class="col">
       <div class="card shop-card">
         <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">

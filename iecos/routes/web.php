@@ -66,9 +66,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/users', AdministratorController::class)->name('user');
         Route::get('/add-user', addUserController::class)->name('add-user');
         Route::post('/add', 'AddUserController@save')->name('add'); 
+        Route::post('/add-rewards', StoreController::class . '@add')->name('add-rewards');
     });
     
     Route::get('/store', StoreController::class)->name('store');
+    
 
     
 });

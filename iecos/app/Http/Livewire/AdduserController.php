@@ -38,7 +38,7 @@ class AddUserController extends Component
             'user.name' => 'required',
             'user.email' => 'required|email',
             'user.role_id' => 'required',
-            'user.rut' => 'required', // Cambiado a 'user.rut' en lugar de solo 'rut'
+            'user.rut' => 'required', 
             'password' => 'required|min:6',
         ], [
             'user.name.required' => 'El campo de nombre es obligatorio.',

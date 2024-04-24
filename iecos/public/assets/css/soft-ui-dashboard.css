@@ -633,7 +633,7 @@ progress {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 1.5rem);
+  /* padding-right: var(--bs-gutter-x, 3.5rem); */
   padding-left: var(--bs-gutter-x, 1.5rem);
   margin-right: auto;
   margin-left: auto;
@@ -684,6 +684,8 @@ progress {
 
 .col {
   flex: 1 0 0%;
+  padding-right: 4rem;
+}
 }
 
 .row-cols-auto > * {
@@ -20126,7 +20128,7 @@ textarea.form-control-lg {
 }
 .fixed-plugin .card {
   position: fixed !important;
-  right: -360px;
+  right: -100rem;
   top: 0;
   height: 100%;
   left: auto !important;
@@ -24534,7 +24536,7 @@ pre[class*=language-] {
 
 .ps--active-x > .ps__rail-x,
 .ps--active-y > .ps__rail-y {
-  display: block;
+  /* display: block; */
   background-color: transparent;
 }
 
