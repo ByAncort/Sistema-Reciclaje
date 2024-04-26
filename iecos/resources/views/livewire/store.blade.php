@@ -14,15 +14,13 @@
             <h1>Canjeo de Puntos</h1>
             @if($user && $user->hasRole(2))
             <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar Producto
-            </button>
+  Launch demo modal
+</button>
             @endif
         </div>
 
         @include('components.plugins.cards')
         @include('components.modal.add_rewards')
-    </div>
-
     <script>
         // Ocultar la alerta después de 2 segundos
         setTimeout(function() {

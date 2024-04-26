@@ -19,27 +19,27 @@ class StoreController extends Component
         return view('livewire.store')->with('reward', $reward);
         
     }
-    public function add(){
-        
-        $data = $this->validate([
+    public function add(Request $request)
+    {
+        // Validate incoming request
+        $data = $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'required|string',
             'cantidad' => 'required|integer|min:0',
             'points_required' => 'required|integer|min:0',
         ]);
-        
-        $rewards = new rewards();
-        $rewards->nombre = $data['nombre'];
-        $rewards->descripcion = $data['descripcion']; 
-        $rewards->cantidad = $data['cantidad']; 
-        $rewards->points_required = $data['points_required']; 
-        
-        $rewards->save(); 
-        
-      
-        
+
+        // Create a new reward instance
+        $reward = new Rewards();
+        $reward->nombre = $data['nombre'];
+        $reward->descripcion = $data['descripcion'];
+        $reward->cantidad = $data['cantidad'];
+        $reward->points_required = $data['points_required'];
+
+        // Save the reward
+        $reward->save();
+
+        // Redirect back to the store page with a success message
         return redirect('/store')->with('success', 'Recompensa creada correctamente.');
-        
     }
-    
 }

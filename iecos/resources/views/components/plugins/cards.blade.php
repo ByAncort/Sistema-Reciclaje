@@ -16,14 +16,17 @@
             {{$reward->descripcion}}
           </p>
           <div class="author align-items-center">
-            <img src="./assets/img/kit/pro/team-2.jpg" alt="..." class="avatar shadow">
+            <!-- <img src="./assets/img/kit/pro/team-2.jpg" alt="..." class="avatar shadow"> -->
             <div class="name ps-3">
               <span>Puntos necesarios: {{$reward->points_required}}</span>
               <div class="stats">
                 <small>cantidad: {{$reward->cantidad}}</small>
               </div>
+              
             </div>
           </div>
+          <!-- <button type="button" class="btn btn-outline-success">Success</button>   -->
+          <button type="button" class="btn btn-primary btn-lg">Large button</button>
         </div>
       </div>
     </div>
