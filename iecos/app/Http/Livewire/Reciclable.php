@@ -49,6 +49,8 @@ class Reciclable extends Component
                 'quantity' => $this->quantity,
                 'recycling_type_id' => $this->selectedTypeId,
                 'user_id' => $this->userId,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         } else {
             
@@ -73,4 +75,3 @@ class Reciclable extends Component
         }
     }
 }
-
