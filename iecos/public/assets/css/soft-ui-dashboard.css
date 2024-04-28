@@ -3464,6 +3464,7 @@ textarea.form-control-lg {
   color: #000;
   background-color: #f53939;
   border-color: #f53939;
+  margin-left: 1rem;
 }
 .btn-primary:hover {
   color: #000;
@@ -3996,7 +3997,7 @@ textarea.form-control-lg {
 }
 
 .collapse:not(.show) {
-  display: none;
+    display: none
 }
 
 .collapsing {
@@ -8901,6 +8902,7 @@ textarea.form-control-lg {
 
 .p-3 {
   padding: 1rem !important;
+  padding:16px
 }
 
 .p-4 {
