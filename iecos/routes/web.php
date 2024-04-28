@@ -18,6 +18,7 @@ use App\Http\Livewire\AdministratorController;
 use App\Http\Livewire\addUserController;
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Livewire\Reciclable;
 
 use App\Http\Livewire\StoreController;
 
@@ -71,6 +72,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/store', StoreController::class)->name('store');
     
+    Route::get('/reciclable', Reciclable::class)->name('reciclable');
 
     
 });

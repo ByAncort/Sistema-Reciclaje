@@ -45,7 +45,7 @@ class AddUserController extends Component
             'user.email.required' => 'El campo de email es obligatorio.',
             'user.role_id.required' => 'El campo de role es obligatorio.',
             'password.required' => 'El campo de password es obligatorio.',
-            // Agrega mensajes personalizados para otras reglas de validación si es necesario
+             
         ]);
     
         $user = new User();

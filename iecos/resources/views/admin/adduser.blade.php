@@ -163,42 +163,43 @@
                                         id="user-name">
                                 </div>
                                 @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div> 
+                            </div>
                             <div class="form-group">
-    <label for="user-rut" class="form-control-label">{{ __('Rut') }}</label>
-    <div class="@error('user.rut')border border-danger rounded-3 @enderror">
-        <input wire:model="user.rut" class="form-control" type="text" placeholder="Rut" id="user-rut" onchange="validaRut(this.value)">
-    </div>
-    @error('user.rut') <div class="text-danger">{{ $message }}</div> @enderror
-</div>
+                                <label for="user-rut" class="form-control-label">{{ __('Rut') }}</label>
+                                <div class="@error('user.rut')border border-danger rounded-3 @enderror">
+                                    <input wire:model="user.rut" class="form-control" type="text" placeholder="Rut"
+                                        id="user-rut" onchange="validaRut(this.value)">
+                                </div>
+                                @error('user.rut') <div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
 
-<script>
-function validaRut(rut){ 
-    var suma=0; 
-    var arrRut = rut.split("-"); 
-    var rutSolo = arrRut[0]; 
-    var verif = arrRut[1]; 
-    var continuar = true; 
-    for(i=2;continuar;i++){ 
-        suma += (rutSolo%10)*i; 
-        rutSolo = parseInt((rutSolo /10)); 
-        i=(i==7)?1:i; 
-        continuar = (rutSolo == 0)?false:true; 
-    }
-    resto = suma%11; 
-    dv = 11-resto; 
-    if (dv == 10 && verif.toUpperCase() == 'K') {
-        return true;
-    } else if (dv == 11 && verif == 0) {
-        return true; 
-    } else if (dv == verif) {
-        return true; 
-    } else {
-        alert("RUT incorrecto, ingréselo en el formato 11111111-1");
-        return false;
-    }
-}
-</script>
+                            <script>
+                            function validaRut(rut) {
+                                var suma = 0;
+                                var arrRut = rut.split("-");
+                                var rutSolo = arrRut[0];
+                                var verif = arrRut[1];
+                                var continuar = true;
+                                for (i = 2; continuar; i++) {
+                                    suma += (rutSolo % 10) * i;
+                                    rutSolo = parseInt((rutSolo / 10));
+                                    i = (i == 7) ? 1 : i;
+                                    continuar = (rutSolo == 0) ? false : true;
+                                }
+                                resto = suma % 11;
+                                dv = 11 - resto;
+                                if (dv == 10 && verif.toUpperCase() == 'K') {
+                                    return true;
+                                } else if (dv == 11 && verif == 0) {
+                                    return true;
+                                } else if (dv == verif) {
+                                    return true;
+                                } else {
+                                    alert("RUT incorrecto, ingréselo en el formato 11111111-1");
+                                    return false;
+                                }
+                            }
+                            </script>
 
 
                         </div>
@@ -230,13 +231,12 @@ function validaRut(rut){
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
-                                    <div class="@error('password')border border-danger rounded-3 @enderror">
-                                        <input wire:model="password" id="password" type="password" class="form-control"
-                                            placeholder="Password" aria-label="Password"
-                                            aria-describedby="password-addon">
-                                    </div>
-                                    @error('password') <div class="text-danger">{{ $message }}</div> @enderror
+                                <label for="password">{{ __('Password') }}</label>
+                                <div class="@error('password')border border-danger rounded-3 @enderror">
+                                    <input wire:model="password" id="password" type="password" class="form-control"
+                                        placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                </div>
+                                @error('password') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                     </div>
@@ -275,12 +275,9 @@ function validaRut(rut){
 </div>
 
 <script>
-
-
-    
-    document.addEventListener('livewire:load', function () {
-        Livewire.on('user-added', function (message) {
-            alert(message);
-        });
+document.addEventListener('livewire:load', function() {
+    Livewire.on('user-added', function(message) {
+        alert(message);
     });
+});
 </script>
