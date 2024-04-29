@@ -75,7 +75,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Puntos</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $103,430
+                    {{ $puntos }}
                       <span class="text-success text-sm font-weight-bolder"></span>
                     </h5>
                   </div>
@@ -91,38 +91,14 @@
         </div>
       </div>
       <div class="row mt-4">
+        @include('components.tables.active_user')
+        @include('components.tables.movimientos')
         <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Lorem ipsum dolor.</p>
-                    <h5 class="font-weight-bolder">Lorem ipsum dolor.</h5>
-                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut pretium est. In consequat felis nec neque tincidunt faucibus. Nunc.</p>
-                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      Read More
-                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-warning border-radius-lg h-100">
-                      <!-- <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves"> -->
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class="w-100 position-relative z-index-2 pt-4" src="/assets/img/illustrations/recycling-symbol-svgrepo-com.svg" alt="Recycling Symbol">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
         
-        @include('components.tables.movimientos')
-
+        
         <div class="row mt-4">
-        @include('components.tables.active_user')
         <!-- @include('components.tables.sales') -->
       </div>
       <!-- @include('components.tables.project') -->

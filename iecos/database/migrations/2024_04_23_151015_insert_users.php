@@ -26,9 +26,9 @@ return new class extends Migration
             'name' => ucfirst($role['name']), // Puedes cambiar esto si deseas
             'email' => $role['name'] . '@iecos.com',
             'password' => bcrypt('secret'), // Puedes cambiar la contraseña si deseas
-            'phone' => '1234567890',
-            'location' => 'New York',
-            'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            // 'phone' => '1234567890',
+            // 'location' => 'New York',
+            // 'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

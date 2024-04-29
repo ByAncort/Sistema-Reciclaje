@@ -31,20 +31,36 @@ class Reciclable extends Component
         $this->validate([
             'quantity' => 'required|numeric|min:0',
             'selectedTypeId' => 'required|exists:recycling_types,id',
-            'userId' => 'required|exists:users,id', // asegúrate de validar el ID del usuario
+            'userId' => 'required|exists:users,id', 
         ]);
-
-        
+    
         $user = DB::table('users')->where('id', $this->userId)->first();
         if ($user) {
             $this->userName = $user->name;
             $this->userEmail = $user->email;
-            $this->userPhone = $user->phone;
-            $this->userLocation = $user->location;
-            $this->userAbout = $user->about;
             $this->userRoleId = $user->role_id;
-
+    
+            $quantity = intval($this->quantity);
+            $puntos = 0;
            
+                $puntos = 0; // Inicializa los puntos
+                if ($this->selectedTypeId == 1) {
+                    $puntos = $this->quantity / 2;
+                } elseif ($this->selectedTypeId == 2) {
+                    $puntos = $this->quantity / 3;
+                } elseif ($this->selectedTypeId == 3) {
+                    $puntos = $this->quantity / 1.5;
+                }
+
+
+
+                $puntaje = $user->puntos;
+                $nuevoPuntaje = $puntaje + $puntos;
+               
+                DB::table('users')->where('id', $this->userId)->update(['puntos' => $nuevoPuntaje]);
+            
+    
+            // Inserta el nuevo elemento reciclable
             DB::table('recyclable_items')->insert([
                 'quantity' => $this->quantity,
                 'recycling_type_id' => $this->selectedTypeId,
@@ -53,17 +69,18 @@ class Reciclable extends Component
                 'updated_at' => now(),
             ]);
         } else {
-            
             session()->flash('error', 'Usuario no encontrado');
             return;
         }
-
+    
+        // Reinicia las variables
         $this->quantity = null;
         $this->userId = null;
         $this->selectedTypeId = null;
         $this->successMessage = true;
         session()->flash('success', '¡El reciclaje se ha guardado correctamente!');
     }
+    
 
     public function updatedUserId()
     {
