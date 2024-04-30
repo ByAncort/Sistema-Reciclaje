@@ -5014,6 +5014,26 @@ textarea.form-control-lg {
   border-radius: 1rem;
   margin: 1rem;
 }
+.card-navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 1rem;
+  margin: 1rem;
+}
+@media (max-width: 768px) {
+  .card-navbar {
+    display: none;
+    
+    
+  }
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -19648,6 +19668,7 @@ textarea.form-control-lg {
 .card .card-body {
   font-family: "Open Sans";
   padding: 1.5rem;
+  
 }
 .card.card-plain {
   background-color: transparent;

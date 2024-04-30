@@ -13,10 +13,16 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end" id="navbar">
                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
-                    <div class="card">
-
+                    <div class="card-navbar">
                         <div class="card-body p-3">
-                            <span>Tu número de cuenta: </span>
+                            <span>Puntos: </span>
+                            <span class="badge bg-gradient-dark">{{ Auth::user()->puntos }}</span>
+                        </div>
+                    </div>
+                <div class="ms-md-3 pe-md-3 d-flex align-items-center">
+                    <div class="card-navbar">
+                        <div class="card-body p-3">
+                            <span>Id: </span>
                             <span class="badge bg-gradient-dark">{{ Auth::id() }}</span>
                         </div>
                     </div>

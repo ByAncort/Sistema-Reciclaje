@@ -19,9 +19,7 @@ class AddUserController extends Component
         $this->user = [
             'name' => '',
             'email' => '',
-            'phone' => '',
-            'location' => '',
-            'about' => ''
+          
         ];
     }
     
@@ -52,7 +50,7 @@ class AddUserController extends Component
         $user->name = $data['user']['name'];
         $user->email = $data['user']['email'];
         $user->role_id = $data['user']['role_id'];
-        $user->rut = $data['user']['rut']; // Cambiado a 'rut' en lugar de 'user->rut'
+      
         $user->password = bcrypt($data['password']); 
         $user->save();
     

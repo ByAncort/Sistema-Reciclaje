@@ -134,7 +134,7 @@
                 <div wire:model="showDemoNotification" class="mt-3  alert alert-primary alert-dismissible fade show"
                     role="alert">
                     <span class="alert-text text-white">
-                        {{ __('You are in a demo version, you can\'t update the profile.') }}</span>
+                        {{ __('Informacion de perfil guardada correctamente') }}</span>
                     <button wire:click="$set('showDemoNotification', false)" type="button" class="btn-close"
                         data-bs-dismiss="alert" aria-label="Close">
                     </button>
