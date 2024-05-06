@@ -74,7 +74,15 @@ class StoreController extends Component
             DB::table('rewards')->where('id', $id)->update(['cantidad' => $cantidadTotal]);
 
             DB::table('users')->where('id', $user_id)->update(['puntos' => $res]);
+            DB::table('canjeos')->insert([
+                'user_id' =>$user_id,
+                'n_recompensa' =>$nombre,
+                'estado'=>'pendiente',
+                'created_at' => now(),
+                
+            ]);
             
+
             
             return redirect('/store')->with('success', 'Compra realizada con éxito!');
         } else {

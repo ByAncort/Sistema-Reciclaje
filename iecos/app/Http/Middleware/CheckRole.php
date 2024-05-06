@@ -8,15 +8,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckRole
 {
-    public function handle(Request $request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        $roleId = intval($role);
-
-        // Asegúrate de que el usuario esté autenticado y tenga el rol requerido
-        if (!$request->user() || !$request->user()->hasRole($roleId)) {
+        // Asegúrate de que el usuario esté autenticado y tenga al menos uno de los roles requeridos
+        $user = $request->user();
+        
+        if (!$user) {
             abort(403, 'Unauthorized action.');
         }
-
-        return $next($request);
+    
+        foreach ($roles as $role) {
+            if ($user->hasRole(intval($role))) {
+                return $next($request);
+            }
+        }
+    
+        abort(403, 'Unauthorized action.');
     }
+    
 }

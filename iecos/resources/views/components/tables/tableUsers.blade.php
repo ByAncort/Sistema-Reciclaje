@@ -33,9 +33,7 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Creation Date
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action
-                                    </th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,14 +63,7 @@
     <td class="text-center">
         <span class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
     </td>
-    <td class="text-center">
-        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-            <i class="fas fa-user-edit text-secondary"></i>
-        </a>
-        <span>
-            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-        </span>
-    </td>
+    
 </tr>
 @endforeach
 

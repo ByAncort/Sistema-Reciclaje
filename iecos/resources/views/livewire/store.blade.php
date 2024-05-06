@@ -17,8 +17,8 @@
         <div class="d-flex justify-content-between align-items-center">
             <h1>Canjeo de Puntos</h1>
             @if($user && $user->hasRole(2))
-            <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
+            <button type="button" class="btn bg-gradient-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar recompensa
 </button>
             @endif
         </div>

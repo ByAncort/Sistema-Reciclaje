@@ -13,7 +13,7 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-
+use App\Http\Livewire\CanjeosRecompensas;
 use App\Http\Livewire\AdministratorController;
 use App\Http\Livewire\addUserController;
 use App\Http\Livewire\LaravelExamples\UserProfile;
@@ -62,17 +62,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 
     //Owner
-    Route::middleware('role:2')->group(function () {
+    Route::middleware('role:1,2')->group(function () {
         Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
         Route::get('/users', AdministratorController::class)->name('user');
         Route::get('/add-user', addUserController::class)->name('add-user');
         Route::post('/add', 'AddUserController@save')->name('add'); 
-        Route::post('/add-rewards', StoreController::class . '@add')->name('add-rewards');
+        Route::get('/reciclable', Reciclable::class)->name('reciclable');
+        Route::get('/canjeos-recompensas', CanjeosRecompensas::class)->name('canjeos.recompensas');
     });
     
+    Route::post('/add-rewards', StoreController::class . '@add')->name('add-rewards');
     Route::get('/store', StoreController::class)->name('store');
     
-    Route::get('/reciclable', Reciclable::class)->name('reciclable');
+
+
+    
 
     
 });

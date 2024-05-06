@@ -21709,7 +21709,7 @@ hr.horizontal.gray-light {
 }
 
 .sidenav {
-  z-index: 5000;
+  z-index: 1000;
 }
 .sidenav .navbar-brand,
 .sidenav .navbar-heading {

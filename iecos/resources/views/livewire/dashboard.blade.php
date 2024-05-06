@@ -32,7 +32,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Tus Transacciones</p>
                     <h5 class="font-weight-bolder mb-0">
-                      +3,462
+                      {{ $totalCantidad }}
                       <span class="text-danger text-sm font-weight-bolder"></span>
                     </h5>
                   </div>
@@ -93,6 +93,7 @@
       </div>
       <div class="row mt-4">
         @include('components.tables.active_user')
+
         @include('components.tables.movimientos')
         <div class="col-lg-7 mb-lg-0 mb-4">
           

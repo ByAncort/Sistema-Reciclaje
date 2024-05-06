@@ -26,8 +26,8 @@ class SignUp extends Component
     }
 
     public function register() {
-        $role_id= DB::table('roles')->where('name', 'Usuario')->value('id');
-
+        $role_id= DB::table('roles')->where('name', 'users')->value('id');
+// dd($role_id);
 
         $this->validate();
         $user = User::create([
