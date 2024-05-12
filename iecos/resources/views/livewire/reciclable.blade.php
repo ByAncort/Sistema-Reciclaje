@@ -4,8 +4,8 @@
             aria-expanded="false" aria-controls="collapseExample">
             Ingresar reciclaje
         </button>
-        
     </p>
+
     @if ($successMessage)
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
@@ -16,6 +16,7 @@
     }, 2000); // Oculta el mensaje después de 5 segundos (5000 milisegundos)
     </script>
     @endif
+
     @if (session()->has('error'))
     <div class="alert alert-danger" role="alert">
         {{ session('error') }}
@@ -25,27 +26,25 @@
         @this.set('errorMessage', false);
     }, 2000); // Oculta el mensaje después de 2 segundos (2000 milisegundos)
     </script>
-@endif
-
+    @endif
 
     <div class="collapse show">
-    <div class="card card-body">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="userId" class="form-label">ID del Usuario</label>
-                    <input wire:model.lazy="userId" type="number" class="form-control" id="userId"
-                        placeholder="ID del Usuario" @blur="loadUserName">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="userRut" class="form-label">RUT del Usuario</label>
+                        <input wire:model="userRut" type="text" class="form-control" id="userRut"
+                            placeholder="RUT del Usuario" @change="loadUserName">
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-6">
-                <label for="userName" class="form-label">Nombre del Usuario</label>
-                <input wire:model="userName" type="text" class="form-control" id="userName" disabled>
+                <div class="col-md-6">
+                    <label for="userName" class="form-label">Nombre del Usuario</label>
+                    <input wire:model="userName" type="text" class="form-control" id="userName" disabled>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 

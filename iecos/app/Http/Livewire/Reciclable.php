@@ -7,11 +7,10 @@ use Livewire\Component;
 
 class Reciclable extends Component
 {
-    // inicializamos variables bases
     public $successMessage = false;
     public $quantity;
     public $selectedTypeId;
-    public $userId;
+    public $userRut;
     public $userName;
     public $userEmail;
     public $userPhone;
@@ -22,8 +21,7 @@ class Reciclable extends Component
     public function render()
     {
         $tipos = DB::table('recycling_types')->get();
-        $users = DB::table('users')->get();
-        return view('livewire.reciclable', compact('tipos', 'users'));
+        return view('livewire.reciclable', compact('tipos'));
     }
 
     public function saveReciclable()
@@ -31,40 +29,35 @@ class Reciclable extends Component
         $this->validate([
             'quantity' => 'required|numeric|min:0',
             'selectedTypeId' => 'required|exists:recycling_types,id',
-            'userId' => 'required|exists:users,id', 
+            'userRut' => 'required|exists:users,rut',
         ]);
-    
-        $user = DB::table('users')->where('id', $this->userId)->first();
+
+        $user = DB::table('users')->where('rut', $this->userRut)->first();
         if ($user) {
             $this->userName = $user->name;
             $this->userEmail = $user->email;
             $this->userRoleId = $user->role_id;
-    
+
             $quantity = intval($this->quantity);
             $puntos = 0;
-           
-                $puntos = 0; // Inicializa los puntos
-                if ($this->selectedTypeId == 1) {
-                    $puntos = $this->quantity / 2;
-                } elseif ($this->selectedTypeId == 2) {
-                    $puntos = $this->quantity / 3;
-                } elseif ($this->selectedTypeId == 3) {
-                    $puntos = $this->quantity / 1.5;
-                }
 
+            if ($this->selectedTypeId == 1) {
+                $puntos = $this->quantity / 2;
+            } elseif ($this->selectedTypeId == 2) {
+                $puntos = $this->quantity / 3;
+            } elseif ($this->selectedTypeId == 3) {
+                $puntos = $this->quantity / 1.5;
+            }
 
+            $puntaje = $user->puntos;
+            $nuevoPuntaje = $puntaje + $puntos;
 
-                $puntaje = $user->puntos;
-                $nuevoPuntaje = $puntaje + $puntos;
-               
-                DB::table('users')->where('id', $this->userId)->update(['puntos' => $nuevoPuntaje]);
-            
-    
-            // Inserta el nuevo elemento reciclable
+            DB::table('users')->where('rut', $this->userRut)->update(['puntos' => $nuevoPuntaje]);
+
             DB::table('recyclable_items')->insert([
                 'quantity' => $this->quantity,
                 'recycling_type_id' => $this->selectedTypeId,
-                'user_id' => $this->userId,
+                'user_id' => $user->id,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
@@ -72,21 +65,21 @@ class Reciclable extends Component
             session()->flash('error', 'Usuario no encontrado');
             return;
         }
-    
-        // Reinicia las variables
+
         $this->quantity = null;
-        $this->userId = null;
+        $this->userRut = null;
         $this->selectedTypeId = null;
         $this->successMessage = true;
         session()->flash('success', '¡El reciclaje se ha guardado correctamente!');
     }
     
 
-    public function updatedUserId()
+    public function updatedUserRut()
     {
-        $user = DB::table('users')->where('id', $this->userId)->first();
+        $user = DB::table('users')->where('rut', $this->userRut)->first();
         if ($user) {
-            $this->userName = $user->email;
+            $this->userName = $user->name;
+            // Asigna el resto de los campos del usuario si es necesario
         } else {
             $this->userName = 'Usuario no encontrado';
         }
