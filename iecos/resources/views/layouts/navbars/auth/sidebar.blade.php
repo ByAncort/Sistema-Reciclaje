@@ -175,7 +175,7 @@
             </li>
     <li class="nav-item">
     <li class="nav-item">
-    <a class="nav-link {{ (Route::currentRouteName() == 'user' or Route::currentRouteName() == 'add-user') ? 'active' : '' }}" href="{{ route('user') }}">
+    <a class="nav-link {{ (Route::currentRouteName() == 'Valores' or Route::currentRouteName() == 'valores') ? 'active' : '' }}" href="{{ route('Valores') }}">
 
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -202,7 +202,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Users</span>
+                    <span class="nav-link-text ms-1">Valores</span>
                 </a>
             </li>
     </li>

@@ -11,6 +11,7 @@ use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
+use App\Http\Livewire\Valores;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
 use App\Http\Livewire\CanjeosRecompensas;
@@ -67,6 +68,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/users', AdministratorController::class)->name('user');
         Route::get('/add-user', addUserController::class)->name('add-user');
         Route::post('/add', 'AddUserController@save')->name('add'); 
+        Route::get('/Valores', Valores::class)->name('Valores');
         Route::get('/reciclable', Reciclable::class)->name('reciclable');
         Route::get('/canjeos-recompensas', CanjeosRecompensas::class)->name('canjeos.recompensas');
     });

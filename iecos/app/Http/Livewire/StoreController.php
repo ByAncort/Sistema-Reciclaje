@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Reward;
 
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class StoreController extends Component
         ]);
 
         
-        $reward = new Rewards();
+        $reward = new Reward();
         $reward->nombre = $data['nombre'];
         $reward->descripcion = $data['descripcion'];
         $reward->cantidad = $data['cantidad'];
