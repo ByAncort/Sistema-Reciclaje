@@ -10,6 +10,7 @@ use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
+use App\Http\Livewire\SolicitudReciclaje;
 use App\Http\Livewire\Valores;
 use App\Http\Livewire\CanjeosRecompensas;
 use App\Http\Livewire\AdministratorController;
@@ -53,6 +54,8 @@ Route::get('/', function() {
 
     //Owner
     Route::middleware('role:1,2')->group(function () {
+
+        Route::get('/solicitud', SolicitudReciclaje::class)->name('solicitud');
         Route::get('/users', AdministratorController::class)->name('user');
         Route::post('/add', 'AddUserController@save')->name('add'); 
         Route::get('/Valores', Valores::class)->name('Valores');
