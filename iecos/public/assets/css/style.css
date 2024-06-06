@@ -271,6 +271,13 @@ img{
   width: 300px;
   justify-self: center;
 }
+.imgHome {
+  max-width: 250%;
+  display: block;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
 
 /*========== BUTTONS ==========*/
 .button{

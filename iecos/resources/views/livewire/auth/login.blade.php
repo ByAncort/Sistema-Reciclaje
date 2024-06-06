@@ -39,9 +39,7 @@
                             </form>
                         </div>
                         <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                            <small class="text-muted">{{ __('Forgot you password? Reset you password') }} <a
-                                    href="{{ route('forgot-password') }}"
-                                    class="text-info text-gradient font-weight-bold">{{ __('here') }}</a></small>
+                            
                             <p class="mb-4 text-sm mx-auto">
                                 {{ __(' Don\'t have an account?') }}
                                 <a href="{{ route('sign-up') }}"

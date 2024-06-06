@@ -54,11 +54,11 @@
                     <div class="home__data">
                     <h1 class="home__title">¡Recicla y gana!</h1>
 <h2 class="home__subtitle">Descubre las mejores recompensas <br> de la semana.</h2>
-<a href="#" class="button">Ver Catálogo</a>
+    <a href="#" class="button">Ver Catálogo</a>
 
                     </div>
-    
-                    <img src="{{ asset('assets/img/mainPictures/home.png') }}" alt="" class="home__img">
+                
+                    <img src="{{ asset('assets/img/home.png') }}" alt="" class="imgHome">
 
                 </div>
             </section>
@@ -74,7 +74,7 @@
 
                     </div>
 
-                    <img src="{{ asset('assets/img/mainPictures/about.png') }}" alt="" class="about__img">
+                    <img src="{{ asset('assets/img/point.png') }}" alt="" class="about__img">
                 </div>
             </section>
 
@@ -85,7 +85,7 @@
 
                 <div class="services__container  bd-grid">
                     <div class="services__content">
-                    <img src="{{ asset('assets/img/mainPictures/home.png') }}" alt="" class="services__img">
+                    <img src="{{ asset('assets/img/latas.png') }}" alt="" class="services__img">
                         
                         <h3 class="services__title">Reciclaje de Latas</h3>
 <p class="services__description">En nuestro punto de reciclaje para latas, ofrecemos una solución eco-friendly para desechar tus latas de aluminio. Ayúdanos a reducir residuos y mantener un medio ambiente más limpio.</p>
@@ -94,14 +94,14 @@
                     </div>
 
                     <div class="services__content">
-                    <img src="{{ asset('assets/img/mainPictures/home.png') }}" alt="" class="services__img">
-                        <h3 class="services__title">Reciclaje de Cartón</h3>
-<p class="services__description">En nuestro punto de reciclaje para cartón, brindamos una solución sostenible para desechar tus materiales de cartón. Contribuye a reducir residuos y preservar el medio ambiente trayendo tus cartones a nuestro centro de reciclaje.</p>
-
-                    </div>
-
+                    <img src="{{ asset('assets/img/vidrio.png') }}" alt="" class="services__img">
+                    <h3 class="services__title">Reciclaje de Vidrios</h3>
+        <p class="services__description">
+            En nuestro punto de reciclaje para vidrios, brindamos una solución sostenible para desechar tus materiales de vidrio. Contribuye a reducir residuos y preservar el medio ambiente trayendo tus vidrios a nuestro centro de reciclaje.
+        </p>
+    </div>
                     <div class="services__content">
-                        <img src="{{ asset('assets/img/mainPictures/home.png') }}" alt="" class="services__img">
+                        <img src="{{ asset('assets/img/plastico.png') }}" alt="" class="services__img">
                         <h3 class="services__title">Reciclaje de Plásticos</h3>
 <p class="services__description">En nuestro centro de reciclaje de plásticos, proporcionamos una solución ambientalmente amigable para desechar tus productos de plástico. Ayuda a reducir la contaminación y proteger nuestro entorno trayendo tus plásticos para su reciclaje.</p>
 
