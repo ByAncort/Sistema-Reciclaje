@@ -30,7 +30,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Tus Transacciones</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Transacciones</p>
                     <h5 class="font-weight-bolder mb-0">
                       {{ $totalCantidad }}
                       <span class="text-danger text-sm font-weight-bolder"></span>
