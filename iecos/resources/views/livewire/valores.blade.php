@@ -2,7 +2,7 @@
     <div class="row mb-3">
     <div class="col">
     <select class="form-select" wire:model="recycling_type_id" placeholder="Recycling Type">
-        <option value="">Select Recycling Type</option>
+        <option value="">Tipo de reciclaje</option>
         @foreach ($tipos as $tipo)
             <option value="{{ $tipo->id }}">{{ $tipo->name }}</option>
         @endforeach
@@ -20,29 +20,47 @@
         </div>
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Recycling Type ID</th>
-                <th>Point</th>
-                <th>Weight</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($asasd as $puntaje)
-                <tr>
-                    <td>{{ $puntaje->id }}</td>
-                    <td>{{ $puntaje->recycling_type_name }}</td>
-                    <td>{{ $puntaje->point }}</td>
-                    <td>{{ $puntaje->weight }}</td>
-                    <td>{{ $puntaje->created_at }}</td>
-                    <td>{{ $puntaje->updated_at }}</td>
-                    
-                </tr>
-            @endforeach
-        </tbody>
+    <div class="card">
+  <div class="table-responsive">
+    <table class="table align-items-center mb-0">
+      <!-- Encabezados de la tabla -->
+      <thead>
+        <tr>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Recycling Type</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Point</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Weight</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created At</th>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Updated At</th>
+        </tr>
+      </thead>
+      <!-- Cuerpo de la tabla -->
+      <tbody>
+        @foreach ($asasd as $puntaje)
+        <tr>
+          <td>
+            <p class="text-xs font-weight-bold mb-0">{{ $puntaje->id }}</p>
+          </td>
+          <td>
+            <p class="text-xs font-weight-bold mb-0">{{ $puntaje->recycling_type_name }}</p>
+          </td>
+          <td>
+            <p class="text-xs font-weight-bold mb-0">{{ $puntaje->point }}</p>
+          </td>
+          <td>
+            <p class="text-xs font-weight-bold mb-0">{{ $puntaje->weight }}</p>
+          </td>
+          <td class="align-middle text-center text-sm">
+            <span>{{ $puntaje->created_at }}</span>
+          </td>
+          <td class="align-middle text-center text-sm">
+            <span>{{ $puntaje->updated_at }}</span>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
     </table>
+  </div>
+</div>
+
 </div>

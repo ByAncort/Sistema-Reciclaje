@@ -93,7 +93,15 @@ hr {
   border: 0;
   opacity: 0.25;
 }
-
+.badge-secondary {
+  color: #5974a2;
+  background-color: #f53939;
+}
+.badge-sm {
+  padding: .45em .775em;
+  font-size: .65em;
+  border-radius: .25rem;
+} 
 hr:not([size]) {
   height: 1px;
 }

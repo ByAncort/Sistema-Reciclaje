@@ -4,7 +4,10 @@
             aria-expanded="false" aria-controls="collapseExample">
             Ingresar reciclaje
         </button>
-        
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Bonus"
+            aria-expanded="false" aria-controls="Bonus">
+            bonus
+        </button>
     </p>
     @if ($successMessage)
     <div class="alert alert-success" role="alert">
