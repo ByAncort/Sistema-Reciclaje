@@ -1,306 +1,414 @@
-# [Soft UI Dashboard Laravel Livewire](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/login)
-
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg) 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-[![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/soft-ui-dashboard-laravel-livewire.svg)](https://github.com/creativetimofficial/soft-ui-dashboard-laravel-livewire/issues?q=is%3Aopen+is%3Aissue) 
-[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/soft-ui-dashboard-laravel-livewire.svg)](https://github.com/creativetimofficial/soft-ui-dashboard-laravel-livewire/issues?q=is%3Aissue+is%3Aclosed)
 
 
-*Frontend version*: Soft UI Dashboard v1.0.0. More info at https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire/?ref=sudl-readme 
+## Acknowledgements
 
-[<img src="https://s3.amazonaws.com/creativetim_bucket/products/492/original/soft-ui-dashboard-laravel-livewire.jpg" width="100%" />](https://www.creative-tim.com/live/soft-ui-dashboard-laravel-livewire)
-
-## Free Frontend Web App for Laravel with Livewire & Alpine.js
-What happens when you combine Soft UI, one of the hottest design trends right now, and Laravel?  We've partnered with [UPDIVISION](https://updivision.com/) to create the ultimate design & development toolbox. 
-
-Soft UI Dashboard Laravel Livewire comes with dozens of handcrafted UI elements tailored for Bootstrap 5 and an out of the box Laravel backend. The Livewire integration allows you to build dynamic interfaces easier without leaving the comfort of your favourite framework. If you combine this even further with Alpine.js, you get the perfect combo for kickstarting your next project.       
+ - [Diagrama DB](https://lucid.app/lucidchart/7efca32e-d35c-4f03-a0f8-7aff4f9de381/edit?viewport_loc=-200%2C-610%2C2368%2C1270%2C0_0&invitationId=inv_14521455-a18e-4d9c-a6ca-4b9407901bea)
  
-## Ok, I`m hooked. So, what am I getting?
-You're getting a lean, mean, app-building machine. Here is the blueprint:  
-* 70 handcrafted UI components. From buttons and inputs to navbars and cards, everything is designed to create visually cohesive interfaces.  
-* 7 example pages to get you started
-* fully-functional authentication system, register and user profile editing features built with Laravel
-* Livewire & Alpine.js integration
 
-## Free for personal and commercial projects
-Whether you're working on a side project or delivering to a client, we've got you covered. Soft UI Dashboard Laravel Livewire is released under MIT license, so you can use it both for personal and commercial projects for free. All you need to do is start coding.    
+# Funciones Iecos
 
-## Detailed documentation and example pages
-We also included detailed documentation for every component and feature so you can follow along. The pre-built example pages give you a quick glimpse of what Soft UI Dashboard Laravel Livewire has to offer so you can get started in no time.  
+## Tabla de estado de  recompensas solo retornamos informacion
 
-If you want to get more features, go PRO with [Soft UI Dashboard PRO Laravel Livewire](https://www.creative-tim.com/product/soft-ui-dashboard-pro-laravel-livewire).
+https://www.iecos.cl/canjeos-recompensas
 
-## Table of Contents
-
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Versions](#versions)
-* [Demo](#demo)
-* [Documentation](#documentation)
-* [Login](#login)
-* [Register](#register)
-* [Forgot Password](#forgot-password)
-* [Reset Password](#reset-password)
-* [User Profile](#user-profile)
-* [Dashboard](#dashboard)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Reporting Issues](#reporting-issues)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-* [Social Media](#social-media)
-* [Credits](#credits)
-
-## Prerequisites
-
-If you don't already have an Apache local environment with PHP and MySQL, use one of the following links:
-
--   Windows: https://updivision.com/blog/post/beginner-s-guide-to-setting-up-your-local-development-environment-on-windows
--   Linux & Mac: https://updivision.com/blog/post/guide-what-is-lamp-and-how-to-install-it-on-ubuntu-and-macos
-
-Also, you will need to install Composer: https://getcomposer.org/doc/00-intro.md  
-And Laravel: https://laravel.com/docs/10.x
-
-
-## Installation
-
-1. Unzip the downloaded archive
-2. Copy and paste **soft-ui-dashboard-laravel-master** folder in your **projects** folder. Rename the folder to your project's name
-3. In your terminal run `composer install`
-4. Copy `.env.example` to `.env` and updated the configurations (mainly the database configuration)
-5. In your terminal run `php artisan key:generate`
-6. Run `php artisan migrate --seed` to create the database tables and seed the roles and users tables
-7. Run `php artisan storage:link` to create the storage symlink (if you are using **Vagrant** with **Homestead** for development, remember to ssh into your virtual machine and run the command from there).
-
-## Usage
-Register a user or login with default user **admin@softui.com** and password **secret** from your database and start testing (make sure to run the migrations and seeders for these credentials to be available).
-
-Besides the dashboard, the auth pages, the billing and table pages, there is also has an edit profile page. All the necessary files are installed out of the box and all the needed routes are added to `routes/web.php`. Keep in mind that all of the features can be viewed once you login using the credentials provided or by registering your own user. 
-
-## Versions
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://demos.creative-tim.com/argon-dashboard-pro/pages/dashboards/dashboard.html?ref=sudl-readme)
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/laravel_logo.png?raw=true" width="60" height="60" />](https://argon-dashboard-pro-laravel.creative-tim.com/?ref=sudl-readme)
-
-| HTML | Laravel Livewire |
-| --- | --- |
-| [![HTML](https://s3.amazonaws.com/creativetim_bucket/products/487/thumb/opt_sdp_thumbnail.jpg)](https://www.creative-tim.com/product/soft-ui-dashboard) | [![Laravel](https://s3.amazonaws.com/creativetim_bucket/products/492/thumb/soft-ui-dashboard-laravel-livewire.jpg)](https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire)  | 
-
-## Demo
-| Register | Login | Dashboard |
-| --- | --- | ---  |
-| [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Register.png" width="322" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/sign-up) | [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Login.png?raw=true" width="322" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/login)  | [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Dashboard.png?raw=true" width="322" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/dashboard)
-
-| Forgot Password Page | Reset Password Page | Profile Page  |
-| --- | --- | ---  |
-| [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Forgot-password.png" width="320" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/login/forgot-password)  | [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Login.png" width="312" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/) | [<img src="https://github.com/creativetimofficial/public-assets/blob/master/soft-ui-design-system-laravel/Profile.png" width="330" />](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/laravel-user-profile)
-[View More](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/dashboard)
-
-## Documentation
-The documentation for the Soft UI Dashboard Laravel Livewire is hosted at our [website](https://soft-ui-dashboard-laravel-livewire.creative-tim.com/documentation/bootstrap/overview/soft-ui-dashboard/index.html).
-
-### Login
-If you are not logged in you can only access this page or the Sign Up page. The default url takes you to the login page where you use the default credentials **admin@softui.com** with the password **secret**. Logging in is possible only with already existing credentials. For this to work you should have run the migrations. 
-
-The `App\Http\Livewire\Auth\Login` handles the logging in of an existing user.
-
+```php
+class CanjeosRecompensas extends Component
+{
+    public function render()
+    {
+        $canjeos = DB::table('canjeos')
+        ->join('users', 'canjeos.user_id', '=', 'users.id')
+        ->select('canjeos.*', 'users.email as user_email','users.name')
+        ->get();
+        // dd($canjeos);
+        return view('livewire.canjeos-recompensas')->with('canjeos', $canjeos);
+    }
+    public function actualizarEstado($canjeoId)
+    {
+        DB::table('canjeos')
+            ->where('id', $canjeoId)
+            ->update(['estado' => 'Entregado']); 
+    }
+}
 ```
-    public function login() {
-        $credentials = $this->validate();
-        if(auth()->attempt(['email' => $this->email, 'password' => $this->password], $this->remember_me)) {
-            $user = User::where(["email" => $this->email])->first();
-            auth()->login($user, $this->remember_me);
-            return redirect()->intended('/dashboard-default');        
-        }
-        else{
-            return $this->addError('email', trans('auth.failed')); 
-        }
+
+## Class dashboard solo devolvemos información
+
+ https://www.iecos.cl/dashboard
+
+```php
+class Dashboard extends Component
+{
+    public function render()
+    {
+        $user_id = Auth::id();
+        $cantidadReciclada = DB::table('recyclable_items')->where('user_id', $user_id)->sum('quantity');
+        $porcentajeIncremento = 55;
+        $puntosQuery = DB::table('users')->select('puntos')->where('id', $user_id)->first();
+// dd($puntos);
+        $puntos = $puntosQuery->puntos;
+
+        $ultimoMov = DB::table('recyclable_items')
+        ->select('recyclable_items.*', 'recycling_types.name as recycling_type_name')
+        ->join('recycling_types', 'recycling_types.id', '=', 'recyclable_items.recycling_type_id')
+        ->where('recyclable_items.user_id', $user_id)
+        ->get();
+        // dd($ultimoMov);
+        $count = DB::table('users')->count(); 
+        $canjeos = DB::table('canjeos')
+    ->join('users', 'canjeos.user_id', '=', 'users.id')
+    ->select('canjeos.*', 'users.email as user_email')
+    ->where('canjeos.user_id', $user_id)
+    ->get();
+        // dd($canjeos);
+
+    $totalCantidad = DB::table('canjeos')
+    ->where('user_id', $user_id)
+    ->count();
+
+    return view('livewire.dashboard', [
+        'count' => $count,
+        'cantidadReciclada' => $cantidadReciclada,
+        'porcentajeIncremento' => $porcentajeIncremento,
+        'puntos' => $puntos,
+        'ultimoMovimiento' => $ultimoMov ,
+        'canjeos' => $canjeos ,
+        'totalCantidad'=>$totalCantidad
+
+    ]);
+    
     }
 ```
 
-### Register
-You can register as a user by filling in the name, email and password for your account. You can do this by accessing the sign up page from the "**Sign Up**" button in the top navbar or by clicking the "**Sign Up**" button from the bottom of the log in form.. Another simple way is adding **/sign-up** in the url.
+ 
 
-The `App\Http\Livewire\Auth\SignUp` handles the registration of a new user.
+## Class de reciclaje donde hacemos la formula para el reciclaje
+
+https://www.iecos.cl/reciclable
+
+- formula de los puntos x reciclaje 
+sacamos la cantidad de puntos por 1000g del reciclaje lo dividimos entre este mismo y tenemos los puntos por 1g  multiplicamos por cantidad ingresada
+
+```php
+   // Busca el puntaje por kilo correspondiente al tipo de reciclaje seleccionado
+            $puntaje = DB::table('puntajes')
+                        ->where('recycling_type_id', $this->selectedTypeId)
+                        ->first();
+                        
+ // Calcula los puntos según la cantidad reciclada y el puntaje por kilo
+                $weight = intval($puntaje->weight);
+                $point=$puntaje->point;
+                $puntosxkg=$point/$weight;
+                $puntos = intval($quantity * $puntosxkg);
+```
+
+Clase completa
+
+```php
+class Reciclable extends Component
+{
+    // inicializamos variables bases
+    public $successMessage = false;
+    public $quantity;
+    public $selectedTypeId;
+    public $userId;
+    public $userName;
+    public $userEmail;
+    public $userPhone;
+    public $userLocation;
+    public $userAbout;
+    public $userRoleId;
+
+    public function render()
+    {
+        $tipos = DB::table('recycling_types')->get();
+        $users = DB::table('users')->get();
+        return view('livewire.reciclable', compact('tipos', 'users'));
+    }
+
+    public function saveReciclable()
+    {
+        $this->validate([
+            'quantity' => 'required|numeric|min:0',
+            'selectedTypeId' => 'required|exists:recycling_types,id',
+            'userId' => 'required|exists:users,id', 
+        ]);
+    
+        // Obtiene la información del usuario
+        $user = DB::table('users')->where('id', $this->userId)->first();
+    
+        if ($user) {
+            // Obtiene el nombre, correo electrónico y rol del usuario
+            $this->userName = $user->name;
+            $this->userEmail = $user->email;
+            $this->userRoleId = $user->role_id;
+    
+            // Obtiene la cantidad de reciclaje
+            $quantity = intval($this->quantity);
+    
+            // Inicializa los puntos
+            $puntos = 0;
+    
+            // Busca el puntaje por kilo correspondiente al tipo de reciclaje seleccionado
+            $puntaje = DB::table('puntajes')
+                        ->where('recycling_type_id', $this->selectedTypeId)
+                        ->first();
+    
+            if ($puntaje) {
+                // Calcula los puntos según la cantidad reciclada y el puntaje por kilo
+                $weight = intval($puntaje->weight);
+                $point=$puntaje->point;
+                $puntosxkg=$point/$weight;
+                $puntos = intval($quantity * $puntosxkg);
+                // dd($puntos);
+            } else {
+                // Si no se encuentra un puntaje por kilo para el tipo de reciclaje seleccionado, muestra un mensaje de error
+                session()->flash('error', 'No se encontró el puntaje correspondiente al tipo de reciclaje seleccionado');
+                return;
+            }
+    
+            // Actualiza el puntaje del usuario
+            $nuevoPuntaje = $user->puntos + $puntos;
+            DB::table('users')->where('id', $this->userId)->update(['puntos' => $nuevoPuntaje]);
+    
+            // Inserta el nuevo elemento reciclable
+            DB::table('recyclable_items')->insert([
+                'quantity' => $quantity,
+                'recycling_type_id' => $this->selectedTypeId,
+                'user_id' => $this->userId,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+    
+            // Reinicia las variables
+            $this->quantity = null;
+            $this->userId = null;
+            $this->selectedTypeId = null;
+            $this->successMessage = true;
+            session()->flash('success', '¡El reciclaje se ha guardado correctamente!');
+        } else {
+            // Si no se encuentra el usuario, muestra un mensaje de error
+            session()->flash('error', 'Usuario no encontrado');
+            return;
+        }
+    }
+    
+    
+
+    public function updatedUserId()
+    {
+        $user = DB::table('users')->where('id', $this->userId)->first();
+        if ($user) {
+            $this->userName = $user->email;
+        } else {
+            $this->userName = 'Usuario no encontrado';
+        }
+    }
+}
+	
 
 ```
+
+## Class de store donde se canjean eh ingresan recompensas
+
+```php
+class StoreController extends Component
+{
+    public function render()
+    {
+        
+        $reward = DB::table('rewards')->get();
+ 
+        return view('livewire.store')->with('reward', $reward);
+        
+    }
+    public function add(Request $request)
+    {
+        
+        $data = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'cantidad' => 'required|integer|min:0',
+            'points_required' => 'required|integer|min:0',
+        ]);
+
+        
+        $reward = new Reward();
+        $reward->nombre = $data['nombre'];
+        $reward->descripcion = $data['descripcion'];
+        $reward->cantidad = $data['cantidad'];
+        $reward->points_required = $data['points_required'];
+
+        
+        $reward->save();
+
+        
+        return redirect('/store')->with('success', 'Recompensa creada correctamente.');
+    }
+    public function shop($rewardId)
+    {
+        $user_id = Auth::id();
+        $puntosQuery = DB::table('users')->select('puntos')->where('id', $user_id)->first();
+        $puntos = $puntosQuery->puntos;
+    
+       
+        $reward = Reward::find($rewardId);
+        //campos de recompensa canjeada
+        $id = $reward->id;
+        $nombre = $reward->nombre;
+        $descripcion = $reward->descripcion;
+        $cantidad = $reward->cantidad;
+        $points_required = $reward->points_required;
+        $created_at = $reward->created_at;
+        $updated_at = $reward->updated_at;
+
+        $cantidad = $reward->points_required;
+
+        if ($puntos >= $cantidad) {
+            $res = $puntos - $cantidad;
+    
+            $cantidad = intval(DB::table('rewards')->where('id', $id)->value('cantidad'));
+            $cantidadTotal =$cantidad - 1;
+            
+            DB::table('rewards')->where('id', $id)->update(['cantidad' => $cantidadTotal]);
+
+            DB::table('users')->where('id', $user_id)->update(['puntos' => $res]);
+            DB::table('canjeos')->insert([
+                'user_id' =>$user_id,
+                'n_recompensa' =>$nombre,
+                'estado'=>'pendiente',
+                'created_at' => now(),
+                
+            ]);
+            
+
+            
+            return redirect('/store')->with('success', 'Compra realizada con éxito!');
+        } else {
+            
+            return redirect('/store')->with('error', 'No tienes suficientes puntos para comprar este premio.');
+        }
+    }
+    
+    
+
+}
+```
+
+## Clase de tabla valores
+
+https://www.iecos.cl/Valores
+
+en esto mostramos tabla de la base de datos y tambien agregamos un nuevo registro
+
+```php
+class Valores extends Component
+{
+    public $puntajes;
+    public $recycling_type_id;
+    public $point;
+    public $weight;
+    public $selectedTypeId;
+
+    public function mount()
+    {
+        // Cargar los puntajes al iniciar el componente
+        $this->cargarPuntajes();
+    }
+
+    public function render()
+    {
+        $tipos = DB::table('recycling_types')->get();
+        $asasd = DB::table('puntajes as a')
+        ->join('recycling_types as b', 'a.recycling_type_id', '=', 'b.id')
+        ->select('a.*', 'b.name as recycling_type_name')
+        ->get();
+
+        return view('livewire.valores', [
+            'tipos' => $tipos,
+            'asasd' => $asasd,
+        ]);
+    }
+
+    public function cargarPuntajes()
+    {
+        // Obtener todos los puntajes de la base de datos junto con los nombres de los tipos de reciclaje
+        $this->puntajes = DB::table('puntajes as a')
+            ->join('recycling_types as b', 'a.recycling_type_id', '=', 'b.id')
+            ->select('a.*', 'b.name as recycling_type_name')
+            ->get();
+
+            
+    }
+    
+    public function agregarPuntaje()
+    {
+        // Validación simple para asegurarse de que se hayan ingresado valores
+        $this->validate([
+            'recycling_type_id' => 'required',
+            'point' => 'required|numeric',
+            'weight' => 'required|numeric',
+        ]);
+    
+        // Imprimir los valores para verlos antes de la inserción
+        // dd([
+        //     'recycling_type_id' => $this->recycling_type_id,
+        //     'point' => $this->point,
+        //     'weight' => $this->weight,
+        // ]);
+    
+        try {
+            // Insertar un nuevo puntaje
+            DB::table('puntajes')->insert([
+                'recycling_type_id' => $this->recycling_type_id,
+                'point' => $this->point,
+                'weight' => $this->weight,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+    
+            // Recargar los puntajes para reflejar los cambios en la tabla
+            $this->cargarPuntajes();
+    
+            // Limpiar los campos después de agregar el puntaje
+            $this->recycling_type_id = null;
+            $this->point = null;
+            $this->weight = null;
+        } catch (\Exception $e) {
+            // Capturar cualquier excepción y mostrar un mensaje de error
+            session()->flash('error', 'Error al agregar el puntaje: ' . $e->getMessage());
+        }
+    }
+    
+
+}
+```
+
+## Register
+
+ya que la pagina se maneja con un sistema de roles en el register siempre se asigna el rol de (users)
+
+```php
     public function register() {
+    //Buscamos el ID del rol de tipo Users
+        $role_id= DB::table('roles')->where('name', 'users')->value('id');
+				// dd($role_id);
+		//Creamos user
         $this->validate();
         $user = User::create([
             'name' => $this->name,
+            'role_id' => $role_id,
             'email' => $this->email,
             'password' => Hash::make($this->password)
         ]);
+
         auth()->login($user);
+
         return redirect('/dashboard');
     }
-```
 
-### Forgot Password
-If a user forgets the account's password it is possible to reset the password. For this the user should click on the "**here**" under the login form or add **/forgot-password** in the url.
-
-The `App\Http\Livewire\Auth\ForgotPassword` takes care of sending an email to the user where he can reset the password afterwards.
-
-```
-    public function recoverPassword() { 
-        $this->validate();
-        $user = User::where('email', $this->email)->first();
-        if($user){
-            $this->notify(new ResetPassword($user->id));
-            $this->showSuccesNotification = true;
-            $this->showFailureNotification = false;
-        } else {
-            $this->showFailureNotification = true;
-        }
+    public function render()
+    {
+        return view('livewire.auth.sign-up');
     }
 ```
-
-### Reset Password
-The user who forgot the password gets an email on the account's email address. The user can access the reset password page by clicking the button found in the email. The link for resetting the password is available for 12 hours. The user must add the email, the password and confirm the password for his password to be updated.
-
-The `App\Http\Livewire\Auth\ResetPassword` helps the user reset the password.
-
-```
-    public function resetPassword() {
-        $this->validate();
-        $existingUser = User::where('email', $this->email)->first();
-        if($existingUser && $existingUser->id == $this->urlID) { 
-            $existingUser->update([
-                'password' => Hash::make($this->password) 
-            ]);
-            $this->showSuccesNotification = true;
-            $this->showFailureNotification = false;
-        } else {
-            $this->showFailureNotification = true;
-        }
-    }
-```
-
-### User Profile
-The profile can be accessed by a logged in user by clicking "**User Profile**" from the sidebar or adding **/user-profile** in the url. The user can add information like phone number, location, description or change the name and email.
-
-The `App\Http\Livewire\UserProfile` handles the user's profile information.
-
-```
-    public function save() {
-        $this->validate();
-        $this->user->save();
-        $this->showSuccesNotification = true;
-    }
-```
-
-### Dashboard
-You can access the dashboard either by using the "**Dashboard**" link in the left sidebar or by adding **/dashboard** in the url after logging in. 
-
-## File Structure
-```
-app
-├── Console
-│   └── Kernel.php
-├── Exceptions
-│   └── Handler.php
-├── Http
-│   ├── Controllers
-│   │   └── Controller.php
-│   ├── Kernel.php
-│   ├── Livewire
-│   │   ├── Auth
-│   │   │   ├── ForgotPassword.php
-│   │   │   ├── Login.php
-│   │   │   ├── Logout.php
-│   │   │   ├── ResetPassword.php
-│   │   │   └── SignUp.php
-│   │   ├── Billing.php
-│   │   ├── Dashboard.php
-│   │   ├── LaravelExamples
-│   │   │   ├── UserManagement.php
-│   │   │   └── UserProfile.php
-│   │   ├── Profile.php
-│   │   ├── Rtl.php
-│   │   ├── StaticSignIn.php
-│   │   ├── StaticSignUp.php
-│   │   └── Tables.php
-│   └── Middleware
-│       ├── Authenticate.php
-│       ├── EncryptCookies.php
-│       ├── PreventRequestsDuringMaintenance.php
-│       ├── RedirectIfAuthenticated.php
-│       ├── TrimStrings.php
-│       ├── TrustHosts.php
-│       ├── TrustProxies.php
-│       └── VerifyCsrfToken.php
-├── Models
-│   └── User.php
-├── Notifications
-│   └── ResetPassword.php
-├── Providers
-│   ├── AppServiceProvider.php
-│   ├── AuthServiceProvider.php
-│   ├── BroadcastServiceProvider.php
-│   ├── EventServiceProvider.php
-│   └── RouteServiceProvider.php
-└── View
-    └── Components
-        └── Layouts
-            ├── App.php
-            └── ...
-```
-## Browser Support
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
-
-## Reporting Issues
-We use GitHub Issues as the official bug tracker for the Soft UI Dashboard. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Soft UI Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire?ref=readme-sudl).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Licensing
-- Copyright 2021 [Creative Tim](https://www.creative-tim.com?ref=readme-sudl)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-sudl)
-
-## Useful Links
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
-- [Blog Creative Tim](http://blog.creative-tim.com/)
-- [Free Products](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
-- [Premium Products](https://www.creative-tim.com/bootstrap-themes/premium?ref=sudl-readme) from Creative Tim
-- [React Products](https://www.creative-tim.com/bootstrap-themes/react-themes?ref=sudl-readme) from Creative Tim
-- [VueJS Products](https://www.creative-tim.com/bootstrap-themes/vuejs-themes?ref=sudl-readme) from Creative Tim
-- [More products](https://www.creative-tim.com/bootstrap-themes?ref=sudl-readme) from Creative Tim
-- Check our Bundles [here](https://www.creative-tim.com/bundles??ref=sudl-readme)
-
-### Social Media
-
-### Creative Tim
-Twitter: <https://twitter.com/CreativeTim?ref=sudl-readme>
-
-Facebook: <https://www.facebook.com/CreativeTim?ref=sudl-readme>
-
-Dribbble: <https://dribbble.com/creativetim?ref=sudl-readme>
-
-Instagram: <https://www.instagram.com/CreativeTimOfficial?ref=sudl-readme>
-
-### Updivision:
-
-Twitter: <https://twitter.com/updivision?ref=sudl-readme>
-
-Facebook: <https://www.facebook.com/updivision?ref=sudl-readme>
-
-Linkedin: <https://www.linkedin.com/company/updivision?ref=sudl-readme>
-
-Updivision Blog: <https://updivision.com/blog/?ref=sudl-readme>
-
-## Credits
-
-- [Creative Tim](https://creative-tim.com/?ref=sudl-readme)
-- [UPDIVISION](https://updivision.com)
-
-
-
-
-
-
-
