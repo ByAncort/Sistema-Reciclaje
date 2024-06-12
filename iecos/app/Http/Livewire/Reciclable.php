@@ -78,6 +78,7 @@ class Reciclable extends Component
                 'user_id' => $this->userId,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'estado' =>"Aprobado",
             ]);
     
             // Reinicia las variables
