@@ -1,9 +1,9 @@
 @php
-    $user = Auth::user();
+$user = Auth::user();
 @endphp
 
 <div>
-    <h2>Registro de Solicitud de Reciclaje</h2>
+  
 
     @if ($successMessage)
     <div class="alert alert-success" role="alert">
