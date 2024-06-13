@@ -42,10 +42,11 @@ class SolicitudReciclaje extends Component
         ]);
     }
 
-    public function confirmarReciclaje($solicitudId, $cantidad, $userId, $recyclingTypeId)
+    public function confirmarReciclaje($solicitudId, $cantidad, $userId, $recyclingTypeId, $bonus)
     {
         // dd($solicitudId, $cantidad, $userId, $recyclingTypeId);
         $user = DB::table('users')->where('id', $userId)->first();
+        $bonus = intval($bonus);
         if ($user) {
             // Obtiene el nombre, correo electrónico y rol del usuario
             $this->userName = $user->name;
@@ -77,7 +78,8 @@ class SolicitudReciclaje extends Component
             }
     
             // Actualiza el puntaje del usuario
-            $nuevoPuntaje = $user->puntos + $puntos;
+            $nuevoPuntaje = $user->puntos + $puntos+$bonus;
+            
             // dd($nuevoPuntaje);
             DB::table('users')->where('id', $userId)->update(['puntos' => $nuevoPuntaje]);
             DB::table('recyclable_items')->where('id', $solicitudId)->update(['estado'=>"Aprobado",'quantity'=>$cantidad]);

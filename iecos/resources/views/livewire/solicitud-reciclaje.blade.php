@@ -3,8 +3,6 @@ $user = Auth::user();
 @endphp
 
 <div>
-  
-
     @if ($successMessage)
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
@@ -61,46 +59,42 @@ $user = Auth::user();
 
     @if($user && ($user->hasRole(1) || $user->hasRole(2)))
     <div class="card">
-  <div class="table-responsive">
-    <table class="table align-items-center mb-0">
-      <thead>
-        <tr>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad Aprox</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($solicitudesADM as $solicitud)
-        <tr>
-          <td>{{ $solicitud->id }}</td>
-          <td>{{ $solicitud->cant_aprox }} kg</td>
-          <td>{{ $solicitud->recycling_type_name }}</td>
-          <td>{{ $solicitud->name }}</td>
-          <td>{{ $solicitud->location }}</td>
-          <td>
-            @if ($solicitud->estado === 'Pendiente')
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-block bg-gradient-warning mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $solicitud->id }}" data-cantidad="{{ $solicitud->cant_aprox }}" data-userid="{{ $solicitud->user_id }}" data-recyclingtypeid="{{ $solicitud->recycling_type_id }}">
-              Confirmar
-            </button>
-            @else
-            Realizado
-            @endif
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-
-
+        <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+                <thead>
+                    <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad Aprox</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($solicitudesADM as $solicitud)
+                    <tr>
+                        <td>{{ $solicitud->id }}</td>
+                        <td>{{ $solicitud->cant_aprox }} kg</td>
+                        <td>{{ $solicitud->recycling_type_name }}</td>
+                        <td>{{ $solicitud->name }}</td>
+                        <td>{{ $solicitud->location }}</td>
+                        <td>
+                            @if ($solicitud->estado === 'Pendiente')
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-block bg-gradient-warning mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $solicitud->id }}" data-cantidad="{{ $solicitud->cant_aprox }}" data-userid="{{ $solicitud->user_id }}" data-recyclingtypeid="{{ $solicitud->recycling_type_id }}">
+                                Confirmar
+                            </button>
+                            @else
+                            Realizado
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
     @endif
 
     @if($user && !($user->hasRole(1) || $user->hasRole(2)))
@@ -115,13 +109,13 @@ $user = Auth::user();
             </thead>
             <tbody>
                 @foreach ($solicitudes as $solicitud)
-                    <tr>
+                <tr>
                     <td>{{ $solicitud->quantity }}</td>
-                        <td>{{ $solicitud->recycling_type_id }}</td>
-                        <!-- <td>{{ $solicitud->user_id }}</td> -->
-                        <td>{{ $solicitud->name }}</td>
-                        <td>{{ $solicitud->location }}</td>
-                    </tr>
+                    <td>{{ $solicitud->recycling_type_id }}</td>
+                    <!-- <td>{{ $solicitud->user_id }}</td> -->
+                    <td>{{ $solicitud->name }}</td>
+                    <td>{{ $solicitud->location }}</td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
@@ -142,6 +136,10 @@ $user = Auth::user();
                     <div class="form-group">
                         <label for="modal-quantity" class="col-form-label">Cantidad de reciclaje:</label>
                         <input type="text" class="form-control" id="modal-quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-bonus" class="col-form-label">Bonus:</label>
+                        <input type="text" class="form-control" id="modal-bonus">
                     </div>
                 </form>
             </div>
@@ -164,11 +162,12 @@ $user = Auth::user();
             var recyclingTypeId = button.getAttribute('data-recyclingtypeid');
 
             var modalQuantity = document.getElementById('modal-quantity');
+            var modalBonus = document.getElementById('modal-bonus');
             modalQuantity.value = cantidad;
 
             var saveChangesButton = document.getElementById('save-changes');
             saveChangesButton.onclick = function () {
-                @this.confirmarReciclaje(solicitudId, modalQuantity.value, userId, recyclingTypeId);
+                @this.confirmarReciclaje(solicitudId, modalQuantity.value, userId, recyclingTypeId, modalBonus.value);
             };
         });
     });
