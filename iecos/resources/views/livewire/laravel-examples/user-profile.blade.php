@@ -58,6 +58,26 @@
                             @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                     </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user.location" class="form-control-label">{{ __('Location') }}</label>
+                                <div class="@error('user.location') border border-danger rounded-3 @enderror">
+                                    <input wire:model.live="user.location" class="form-control" type="text"
+                                        placeholder="Location" id="name">
+                                </div>
+                                @error('user.location') <div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
+                                <div class="@error('user.phone')border border-danger rounded-3 @enderror">
+                                    <input wire:model.live="user.phone" class="form-control" type="tel"
+                                        placeholder="40770888444" id="phone">
+                                </div>
+                                @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+                        </div>
                 </div>
 
                 <div class="d-flex justify-content-end">
