@@ -55,13 +55,13 @@ Route::get('/', function() {
     //Owner
     Route::middleware('role:1,2')->group(function () {
 
-        Route::get('/solicitud', SolicitudReciclaje::class)->name('solicitud');
         Route::get('/users', AdministratorController::class)->name('user');
         Route::post('/add', 'AddUserController@save')->name('add'); 
         Route::get('/Valores', Valores::class)->name('Valores');
         Route::get('/reciclable', Reciclable::class)->name('reciclable');
         Route::get('/canjeos-recompensas', CanjeosRecompensas::class)->name('canjeos.recompensas');
-    });
+        });
+    Route::get('/solicitud', SolicitudReciclaje::class)->name('solicitud');
     Route::post('/add-rewards', StoreController::class . '@add')->name('add-rewards');
     Route::get('/store', StoreController::class)->name('store');
     

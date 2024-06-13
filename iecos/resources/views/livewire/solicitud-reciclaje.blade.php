@@ -98,23 +98,27 @@ $user = Auth::user();
     @endif
 
     @if($user && !($user->hasRole(1) || $user->hasRole(2)))
-        <table class="table table-striped">
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                    <th>quantity</th>
-                    <th>recycling_type_id</th>
-                    <th>user_id</th>
-                    <th>email</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad Aprox</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
+                       
                 </tr>
             </thead>
             <tbody>
                 @foreach ($solicitudes as $solicitud)
                 <tr>
-                    <td>{{ $solicitud->quantity }}</td>
-                    <td>{{ $solicitud->recycling_type_id }}</td>
-                    <!-- <td>{{ $solicitud->user_id }}</td> -->
-                    <td>{{ $solicitud->name }}</td>
-                    <td>{{ $solicitud->location }}</td>
+                        <td>{{ $solicitud->id }}</td>
+                        <td>{{ $solicitud->cant_aprox }} kg</td>
+                        <td>{{ $solicitud->recycling_type_name }}</td>
+                        <td>{{ $solicitud->name }}</td>
+                        <td>{{ $solicitud->location }}</td>
                 </tr>
                 @endforeach
             </tbody>
