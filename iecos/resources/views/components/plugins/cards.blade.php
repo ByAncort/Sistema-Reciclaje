@@ -2,13 +2,9 @@
   @foreach($reward as $reward)
     <div class="col">
       <div class="card shop-card">
-        <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-          <a href="javascript:;" class="d-block">
-            <img src="{{ asset('assets/img/curved-images/curved-8.jpg') }}" class="img-fluid border-radius-lg">
-          </a>
-        </div>
+  
         <div class="card-body pt-2">
-          <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">House</span>
+          <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2">     {{ $reward->nombre}}</span>
           <a href="javascript:;" class="card-title h5 d-block text-darker">
             {{ $reward->nombre}}
           </a>
