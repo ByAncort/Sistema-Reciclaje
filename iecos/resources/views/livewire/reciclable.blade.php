@@ -4,10 +4,7 @@
             aria-expanded="false" aria-controls="collapseExample">
             Ingresar reciclaje
         </button>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Bonus"
-            aria-expanded="false" aria-controls="Bonus">
-            bonus
-        </button>
+    
     </p>
     @if ($successMessage)
     <div class="alert alert-success" role="alert">
@@ -65,6 +62,13 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">bonus</label>
+                            <input wire:model.defer="bonus" type="bonus" class="form-control"
+                                id="exampleFormControlInput2" placeholder="Puntos">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="user-role" class="form-control-label">Tipo de reciclaje</label>
                             <div class="border rounded-3">
@@ -88,5 +92,19 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+
+<!-- form de bonus -->
+
+<div class="collapse" id="Bonus">
+    <div class="card card-body">
+        <form wire:submit.prevent="agregarBonus">
+            <div class="mb-3">
+                <label for="bonusPoints" class="form-label">Puntos de bonificación</label>
+                <input wire:model.defer="bonusPoints" type="number" class="form-control" id="bonusPoints" placeholder="Puntos">
+            </div>
+            <button type="submit" class="btn btn-success">Agregar Bonus</button>
+        </form>
     </div>
 </div>
