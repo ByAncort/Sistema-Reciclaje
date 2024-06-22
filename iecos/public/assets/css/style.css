@@ -278,7 +278,11 @@ img{
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-
+@media (max-width: 768px) {
+  .imgHome {
+    display: none; /* Oculta la imagen */
+  }
+}
 /*========== BUTTONS ==========*/
 .button{
   display: inline-block;

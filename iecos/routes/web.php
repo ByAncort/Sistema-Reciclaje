@@ -59,7 +59,7 @@ Route::get('/', function() {
         Route::post('/add', 'AddUserController@save')->name('add'); 
         Route::get('/Valores', Valores::class)->name('Valores');
         Route::get('/reciclable', Reciclable::class)->name('reciclable');
-        Route::get('/canjeos-recompensas', CanjeosRecompensas::class)->name('canjeos.recompensas');
+        Route::get('/canjeos-recompensas', CanjeosRecompensas::class)->name('canjeos recompensas');
         });
     Route::get('/solicitud', SolicitudReciclaje::class)->name('solicitud');
     Route::post('/add-rewards', StoreController::class . '@add')->name('add-rewards');

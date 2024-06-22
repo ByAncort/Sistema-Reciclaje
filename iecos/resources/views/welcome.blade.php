@@ -13,7 +13,7 @@
 
 
 
-        <title>Responsive website food</title>
+        <title>Iecos</title>
     </head>
     <body>
 
@@ -54,7 +54,7 @@
                     <div class="home__data">
                     <h1 class="home__title">¡Recicla y gana!</h1>
 <h2 class="home__subtitle">Descubre las mejores recompensas <br> de la semana.</h2>
-    <a href="#" class="button">Ver Catálogo</a>
+    <a href="{{ route('store') }}" class="button">Ver Catálogo</a>
 
                     </div>
                 
@@ -70,7 +70,7 @@
                     <span class="section-subtitle about__initial">Acerca de nosotros</span>
 <h2 class="section-title about__initial">Canjea tus puntos <br> por increíbles premios</h2>
 <p class="about__description">Somos una plataforma que te permite canjear tus puntos de reciclaje por una amplia variedad de premios emocionantes. Con un servicio al cliente excepcional y una selección de premios de calidad, estamos aquí para recompensar tu compromiso con el medio ambiente. ¡Únete a nosotros hoy mismo!</p>
-<a href="#" class="button">Explorar más</a>
+<a href="{{ route('store') }}" class="button">Explorar más</a>
 
                     </div>
 
