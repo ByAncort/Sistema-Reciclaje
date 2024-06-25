@@ -68,8 +68,13 @@
                 <div class="about__container  bd-grid">
                     <div class="about__data">
                     <span class="section-subtitle about__initial">Acerca de nosotros</span>
-<h2 class="section-title about__initial">Canjea tus puntos <br> por increíbles premios</h2>
-<p class="about__description">Somos una plataforma que te permite canjear tus puntos de reciclaje por una amplia variedad de premios emocionantes. Con un servicio al cliente excepcional y una selección de premios de calidad, estamos aquí para recompensar tu compromiso con el medio ambiente. ¡Únete a nosotros hoy mismo!</p>
+<!-- <h2 class="section-title about__initial">Canjea tus puntos <br> por increíbles premios</h2> -->
+<h2 class="section-title about__initial">Acerca de nosotros</h2>
+<p class="about__description">IECOS – R se crea en 2021 para aportar al desarrollo de actividades amigables con el
+medio ambiente. A partir de 2023 damos inicio a nuestro proyecto de Reciclaje
+Participativo, que busca incorporar a la mayor cantidad de personas al reciclaje de sus
+residuos, generando un sistema de recolección que se adapte a las necesidades de los
+participantes, y un innovador sistema de beneficios que premia el compromiso adquirido.</p>
 <a href="{{ route('store') }}" class="button">Explorar más</a>
 
                     </div>
