@@ -29,10 +29,8 @@ class SolicitudReciclaje extends Component
            
         $solicitudesADM = Solicitud::join('users', 'recyclable_items.user_id', '=', 'users.id')
         ->join('recycling_types', 'recyclable_items.recycling_type_id', '=', 'recycling_types.id')
-        
-        ->where('recyclable_items.estado', 'Pendiente')
         ->select('recyclable_items.*', 'users.name', 'users.location', 'recycling_types.name AS recycling_type_name')
-        ->get();
+        ->orderBy('updated_at', 'DESC')->get()  ;
     
             // dd($solicitudesADM);
         return view('livewire.solicitud-reciclaje', [
@@ -106,12 +104,12 @@ class SolicitudReciclaje extends Component
     public function registrarSolicitud()
     {
         $this->validate([
-            'cant_aprox' => 'required|numeric|min:0',
+            'cant_aprox' => 'required|string    ',
             'selectedTypeId' => 'required|exists:recycling_types,id',
         ]);
 
         DB::table('recyclable_items')->insert([
-            'cant_aprox' => $this->cant_aprox,
+            'descripcion' => $this->cant_aprox,
             'recycling_type_id' => $this->selectedTypeId,
             'user_id' => Auth::id(), 
             'created_at' => now(),

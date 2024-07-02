@@ -13,7 +13,7 @@ class CanjeosRecompensas extends Component
         $canjeos = DB::table('canjeos')
         ->join('users', 'canjeos.user_id', '=', 'users.id')
         ->select('canjeos.*', 'users.email as user_email','users.name')
-        ->get();
+        ->orderBy('estado', 'DESC')->get()  ;
         // dd($canjeos);
         return view('livewire.canjeos-recompensas')->with('canjeos', $canjeos);
     }

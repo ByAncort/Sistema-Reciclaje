@@ -29,8 +29,8 @@ $user = Auth::user();
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="cant_aprox" class="form-label">Cantidad de reciclaje</label>
-                        <input wire:model.defer="cant_aprox" type="number" class="form-control" id="cant_aprox" placeholder="Kg">
+                        <label for="cant_aprox" class="form-label">Descripcion</label>
+                        <input wire:model.defer="cant_aprox" type="text" class="form-control" id="cant_aprox" placeholder="">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -64,7 +64,7 @@ $user = Auth::user();
                 <thead>
                     <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad Aprox</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
@@ -75,7 +75,7 @@ $user = Auth::user();
                     @foreach ($solicitudesADM as $solicitud)
                     <tr>
                         <td>{{ $solicitud->id }}</td>
-                        <td>{{ $solicitud->cant_aprox }} kg</td>
+                        <td>{{ $solicitud->descripcion }}</td>
                         <td>{{ $solicitud->recycling_type_name }}</td>
                         <td>{{ $solicitud->name }}</td>
                         <td>{{ $solicitud->location }}</td>
@@ -115,7 +115,7 @@ $user = Auth::user();
                 @foreach ($solicitudes as $solicitud)
                 <tr>
                         <td>{{ $solicitud->id }}</td>
-                        <td>{{ $solicitud->cant_aprox }} kg</td>
+                        <td>{{ $solicitud->descripcion }} kg</td>
                         <td>{{ $solicitud->recycling_type_name }}</td>
                         <td>{{ $solicitud->name }}</td>
                         <td>{{ $solicitud->location }}</td>

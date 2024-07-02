@@ -15,19 +15,24 @@ class Dashboard extends Component
         $puntosQuery = DB::table('users')->select('puntos')->where('id', $user_id)->first();
 // dd($puntos);
         $puntos = $puntosQuery->puntos;
+        $ultimoMovQuery = DB::table('recyclable_items')
+            ->select('recyclable_items.*', 'recycling_types.name as recycling_type_name')
+            ->join('recycling_types', 'recycling_types.id', '=', 'recyclable_items.recycling_type_id')
+            ->where('recyclable_items.user_id', $user_id);
 
-        $ultimoMov = DB::table('recyclable_items')
-        ->select('recyclable_items.*', 'recycling_types.name as recycling_type_name')
-        ->join('recycling_types', 'recycling_types.id', '=', 'recyclable_items.recycling_type_id')
-        ->where('recyclable_items.user_id', $user_id)
-        ->get();
+        if (Auth::id() != 2) {
+            $ultimoMov = $ultimoMovQuery->get();
+        } else {
+            $ultimoMov = $ultimoMovQuery->orderBy('updated_at', 'DESC')->get();
+        }
+
         // dd($ultimoMov);
         $count = DB::table('users')->count(); 
         $canjeos = DB::table('canjeos')
-    ->join('users', 'canjeos.user_id', '=', 'users.id')
-    ->select('canjeos.*', 'users.email as user_email')
-    ->where('canjeos.user_id', $user_id)
-    ->get();
+            ->join('users', 'canjeos.user_id', '=', 'users.id')
+            ->select('canjeos.*', 'users.email as user_email')
+            ->where('canjeos.user_id', $user_id)
+            ->get();
         // dd($canjeos);
 
 
