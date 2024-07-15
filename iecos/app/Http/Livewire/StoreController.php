@@ -13,7 +13,31 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Component
 {
-     
+    public function update(Request $request, $id)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'required|string|max:255',
+            'points_required' => 'required|integer',
+            'cantidad' => 'required|integer',
+        ]);
+
+        // Find the reward by id
+        $reward = Reward::find($id);
+        if (!$reward) {
+            return redirect()->back()->with('error', 'Reward not found.');
+        }
+
+        // Update the reward with the new data
+        $reward->nombre = $request->input('nombre');
+        $reward->descripcion = $request->input('descripcion');
+        $reward->points_required = $request->input('points_required');
+        $reward->cantidad = $request->input('cantidad');
+        $reward->save();
+
+        return redirect()->back()->with('success', 'Reward updated successfully.');
+    }
     
     public function render()
     {

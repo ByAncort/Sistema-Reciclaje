@@ -21,7 +21,7 @@
               
             </div>
           </div>
-          <!-- <button type="button" class="btn btn-outline-success">Success</button>   -->
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#Edit">Editar</button>  
           <button type="button" wire:click="shop({{ $reward->id }})"" class="btn btn-primary btn-lg">canjear</button>
 
         </div>

@@ -104,7 +104,6 @@ class SolicitudReciclaje extends Component
     public function registrarSolicitud()
     {
         $this->validate([
-            'cant_aprox' => 'required|string    ',
             'selectedTypeId' => 'required|exists:recycling_types,id',
         ]);
 

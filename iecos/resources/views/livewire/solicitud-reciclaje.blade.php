@@ -67,7 +67,7 @@ $user = Auth::user();
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicacion</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
                     </tr>
                 </thead>
@@ -103,22 +103,24 @@ $user = Auth::user();
             <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad Aprox</th>
+               
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicacion</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">fecha</th>
                        
                 </tr>
             </thead>
             <tbody>
                 @foreach ($solicitudes as $solicitud)
                 <tr>
-                        <td>{{ $solicitud->id }}</td>
-                        <td>{{ $solicitud->descripcion }} kg</td>
+                   
+                        <td>{{ $solicitud->descripcion }}</td>
                         <td>{{ $solicitud->recycling_type_name }}</td>
                         <td>{{ $solicitud->name }}</td>
                         <td>{{ $solicitud->location }}</td>
+                        <td>{{ $solicitud->created_at }}</td>
                 </tr>
                 @endforeach
             </tbody>

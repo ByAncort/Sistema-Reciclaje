@@ -50,7 +50,7 @@
                 <div class="text-center">
                     <h1 class="mx-auto my-0 text-uppercase">IECOS – R</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Recicla y gana, juntos cuidamos el medioambiente</h2>
-                    <a class="btn btn-primary" href="{{ route('login') }}">Emprezar</a>
+                    <a class="btn btn-primary" href="{{ route('login') }}">Empezar</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <div class="col-lg-8">
                     <h2 class="text-white mb-4">IECOS – R</h2>
                     <p class="text-white-50">
-                        se crea en 2021 para aportar al desarrollo de actividades amigables con el
+                        Se crea en 2021 para aportar al desarrollo de actividades amigables con el
                         medio ambiente. A partir de 2023 damos inicio a nuestro proyecto de Reciclaje
                         Participativo, que busca incorporar a la mayor cantidad de personas al reciclaje de sus
                         residuos, generando un sistema de recolección que se adapte a las necesidades de los
@@ -149,8 +149,6 @@
                 </div>
             </div>
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-
-
                 <div class="col-lg-6"><img class="img-fluid" src="{{ asset('assets/img/imgWelcomeV2/pet.jpg') }}"
                         alt="..." /></div>
                 <div class="col-lg-6">
@@ -168,6 +166,22 @@
                     </div>
                 </div>
             </div>
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid"
+                        src="{{ asset('assets/img/imgWelcomeV2/Carton.jpg') }}" alt="..." /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Carton</h4>
+                                <p class="mb-0 text-white-50">Por ahora recibimos el cartón como material de reciclaje, pero no otorgamos eco puntos. Próximamente proporcionaremos novedades
+                                    <span>otorgando 0 ECO Puntos por kg</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -179,7 +193,7 @@
                 <h2 class="text-white mb-4">Sistema de Canjeo</h2>
                 <p class="text-white-50 lead">
                     El canjeo de los puntos puede ser en cualquier momento, accediendo a la <a
-                        href="{{ route('store') }}" class="text-decoration-underline text-info">APP</a>. Consulta
+                        href="{{ route('store') }}" class="text-decoration-underline text-info">Iecos</a>. Consulta
                     nuestra oferta de beneficios.
                     Si deseas algún beneficio que no está en nuestra oferta, contáctanos y lo evaluaremos
                     para ti.
