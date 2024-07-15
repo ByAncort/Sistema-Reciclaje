@@ -50,10 +50,10 @@ Route::get('/', function() {
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/user-profile', UserProfile::class)->name('user-profile');
-    Route::post('/edit-reward/{id}', [StoreController::class, 'update'])->name('edit-reward');
-
+    
     //Owner
     Route::middleware('role:1,2')->group(function () {
+        Route::post('/edit-reward/{id}', [StoreController::class, 'update'])->name('edit-reward');
 
         Route::get('/users', AdministratorController::class)->name('user');
         Route::post('/add', 'AddUserController@save')->name('add'); 

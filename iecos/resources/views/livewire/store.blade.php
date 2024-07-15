@@ -55,6 +55,7 @@ $user = Auth::user();
                         <button type="button" wire:click="shop({{ $rewardItem->id }})" class="btn btn-primary btn-lg ms-2">
                             Canjear
                         </button>
+                        @if($user && $user->hasRole(2))
                         <button class="edit-button ms-2" data-bs-toggle="modal"
                         data-bs-target="#editRewardModal{{ $rewardItem->id }}">
                             <svg class="edit-svgIcon" viewBox="0 0 512 512">
@@ -63,6 +64,7 @@ $user = Auth::user();
                                 </path>
                             </svg>
                         </button>
+                        @endif
                     </div>
                     </div>
                 </div>
