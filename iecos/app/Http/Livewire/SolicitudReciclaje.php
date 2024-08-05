@@ -29,8 +29,11 @@ class SolicitudReciclaje extends Component
            
         $solicitudesADM = Solicitud::join('users', 'recyclable_items.user_id', '=', 'users.id')
         ->join('recycling_types', 'recyclable_items.recycling_type_id', '=', 'recycling_types.id')
-        ->select('recyclable_items.*', 'users.name', 'users.location', 'recycling_types.name AS recycling_type_name')
-        ->orderBy('updated_at', 'DESC')->get()  ;
+        ->join('roles', 'users.role_id', '=', 'roles.id') // Unir con la tabla de roles
+        ->select('recyclable_items.*', 'users.name', 'users.location', 'recycling_types.name AS recycling_type_name', 'roles.name AS role_name') // Seleccionar el nombre del rol
+        ->orderBy('recyclable_items.updated_at', 'DESC')
+        ->get();
+    
     
             // dd($solicitudesADM);
         return view('livewire.solicitud-reciclaje', [

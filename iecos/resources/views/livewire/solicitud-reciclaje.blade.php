@@ -30,7 +30,8 @@ $user = Auth::user();
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="cant_aprox" class="form-label">Descripcion</label>
-                        <input wire:model.defer="cant_aprox" type="text" class="form-control" id="cant_aprox" placeholder="">
+                        <input wire:model.defer="cant_aprox" type="text" class="form-control" id="cant_aprox"
+                            placeholder="">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -40,7 +41,7 @@ $user = Auth::user();
                             <select wire:model.defer="selectedTypeId" class="form-select" id="selectedTypeId">
                                 <option value="">Seleccione un tipo</option>
                                 @foreach ($tipos as $tipo)
-                                    <option value="{{ $tipo->id }}">{{ $tipo->name }}</option>
+                                <option value="{{ $tipo->id }}">{{ $tipo->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -59,122 +60,149 @@ $user = Auth::user();
 
     @if($user && ($user->hasRole(1) || $user->hasRole(2)))
     <div class="card">
-        <div class="table-responsive">
-            <table class="table align-items-center mb-0">
-                <thead>
-                    <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicacion</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($solicitudesADM as $solicitud)
-                    <tr>
-                        <td>{{ $solicitud->id }}</td>
-                        <td>{{ $solicitud->descripcion }}</td>
-                        <td>{{ $solicitud->recycling_type_name }}</td>
-                        <td>{{ $solicitud->name }}</td>
-                        <td>{{ $solicitud->location }}</td>
-                        <td>
-                            @if ($solicitud->estado === 'Pendiente')
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-block bg-gradient-warning mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $solicitud->id }}" data-cantidad="{{ $solicitud->cant_aprox }}" data-userid="{{ $solicitud->user_id }}" data-recyclingtypeid="{{ $solicitud->recycling_type_id }}">
-                                Confirmar
-                            </button>
-                            @else
-                            Realizado
-                            @endif
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="table-responsive pt-5">
+            <div class="container">
+                <!-- Campo de búsqueda -->
+                <input class="form-control mb-3" id="searchInput" type="text" placeholder="Buscar en la tabla">
+
+                <!-- Tabla -->
+                <table class="table align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de
+                                Reciclaje</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del
+                                Usuario</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de
+                                Usuario</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicación
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        @foreach ($solicitudesADM as $solicitud)
+                        <tr>
+                            <td>{{ $solicitud->recycling_type_name }}</td>
+                            <td>{{ $solicitud->id }} - {{ $solicitud->name }}</td>
+                            <td>{{ $solicitud->role_name }}</td>
+                            <td>{{ $solicitud->location }}</td>
+                            <td>
+                                @if ($solicitud->estado === 'Pendiente')
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-block bg-gradient-warning mb-3"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $solicitud->id }}"
+                                    data-cantidad="{{ $solicitud->cant_aprox }}" data-userid="{{ $solicitud->user_id }}"
+                                    data-recyclingtypeid="{{ $solicitud->recycling_type_id }}">
+                                    Confirmar
+                                </button>
+                                @else
+                                Realizado
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
     @endif
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#searchInput').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('#tableBody tr').filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
 
     @if($user && !($user->hasRole(1) || $user->hasRole(2)))
     <div class="card">
         <div class="table-responsive">
             <table class="table align-items-center mb-0">
-            <thead>
-                <tr>
-               
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Reciclaje</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Usuario</th>
+                <thead>
+                    <tr>
+
+                        <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descripcion</th> -->
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de
+                            Reciclaje</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del
+                            Usuario</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ubicacion</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">fecha</th>
-                       
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($solicitudes as $solicitud)
-                <tr>
-                   
-                        <td>{{ $solicitud->descripcion }}</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($solicitudes as $solicitud)
+                    <tr>
+
+                        <!-- <td>{{ $solicitud->descripcion }}</td> -->
                         <td>{{ $solicitud->recycling_type_name }}</td>
-                        <td>{{ $solicitud->name }}</td>
+                        <td>{{ $solicitud->id }} - {{ $solicitud->name }}</td>
                         <td>{{ $solicitud->location }}</td>
                         <td>{{ $solicitud->created_at }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @endif
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Confirmar Reciclaje</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="modal-quantity" class="col-form-label">Cantidad de reciclaje:</label>
-                        <input type="text" class="form-control" id="modal-quantity">
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @endif
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmar Reciclaje</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="modal-bonus" class="col-form-label">Bonus:</label>
-                        <input type="text" class="form-control" id="modal-bonus">
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="modal-quantity" class="col-form-label">Cantidad de reciclaje:</label>
+                                <input type="text" class="form-control" id="modal-quantity">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-bonus" class="col-form-label">Bonus:</label>
+                                <input type="text" class="form-control" id="modal-bonus">
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn bg-gradient-primary" id="save-changes">Guardar cambios</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn bg-gradient-primary" id="save-changes">Guardar cambios</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var exampleModal = document.getElementById('exampleModal');
-        exampleModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget;
-            var solicitudId = button.getAttribute('data-id');
-            var cantidad = button.getAttribute('data-cantidad');
-            var userId = button.getAttribute('data-userid');
-            var recyclingTypeId = button.getAttribute('data-recyclingtypeid');
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var exampleModal = document.getElementById('exampleModal');
+            exampleModal.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var solicitudId = button.getAttribute('data-id');
+                var cantidad = button.getAttribute('data-cantidad');
+                var userId = button.getAttribute('data-userid');
+                var recyclingTypeId = button.getAttribute('data-recyclingtypeid');
 
-            var modalQuantity = document.getElementById('modal-quantity');
-            var modalBonus = document.getElementById('modal-bonus');
-            modalQuantity.value = cantidad;
+                var modalQuantity = document.getElementById('modal-quantity');
+                var modalBonus = document.getElementById('modal-bonus');
+                modalQuantity.value = cantidad;
 
-            var saveChangesButton = document.getElementById('save-changes');
-            saveChangesButton.onclick = function () {
-                @this.confirmarReciclaje(solicitudId, modalQuantity.value, userId, recyclingTypeId, modalBonus.value);
-            };
+                var saveChangesButton = document.getElementById('save-changes');
+                saveChangesButton.onclick = function() {
+                    @this.confirmarReciclaje(solicitudId, modalQuantity.value, userId,
+                        recyclingTypeId, modalBonus.value);
+                };
+            });
         });
-    });
-</script>
+        </script>
